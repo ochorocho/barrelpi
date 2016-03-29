@@ -1,0 +1,97 @@
+<head>
+    <title>BarrelPi</title>
+</head>
+<body>
+
+</body>
+
+<template name="index">
+  <div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+      <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+        <button class="close-button" aria-label="Close menu" type="button" data-close="">
+          <span aria-hidden="true">×</span>
+        </button>
+        <ul class="mobile-ofc vertical menu">
+          <li><a class="active" href="/">Übersicht</a></li>
+          <li><a href="/stats">Statistik</a></li>
+        </ul>
+      </div>
+      <div class="off-canvas-content" data-off-canvas-content>
+        <div class="title-bar">
+          <div class="title-bar-left">
+            <button class="menu-icon" type="button" data-open="offCanvas"></button>
+          </div>
+          <div class="text-center">
+            <span class="title-bar-title center">BarrelPi</span>
+          </div>
+        </div>
+
+        <div class="space-15"></div>
+
+        <div class="row container">
+          {{#each sensorData}}
+          <div class="small-6 large-6 columns">
+            <h1>Temp. oben</h1>
+            <hr>
+            <div class="label text-center"><h1>{{temp1}}°C</h1></div>
+          </div>
+          <div class="small-6 large-6 columns">
+            <h1>Temp. unten</h1>
+            <hr>
+            <div class="warning label text-center"><h1>{{temp2}}°C</h1></div>
+          </div>
+          {{/each}}
+        </div>
+        <div class="space-40"></div>
+        <div class="row">
+          <div class="small-12 columns">
+            <h1>Luftzufuhr</h1>
+            <hr>
+          </div>
+          <div class="small-9 columns">
+            <div class="slider" data-slider data-initial-start="50" data-step="10">
+              <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
+              <span class="slider-fill" data-slider-fill></span>
+            </div>
+          </div>
+          <div class="small-3 columns">
+            <input type="number" id="sliderOutput1">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="stats">
+  <div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+      <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+        <button class="close-button" aria-label="Close menu" type="button" data-close="">
+          <span aria-hidden="true">×</span>
+        </button>
+        <ul class="mobile-ofc vertical menu">
+          <li><a href="/">Übersicht</a></li>
+          <li><a class="active" href="/stats">Statistik</a></li>
+        </ul>
+      </div>
+      <div class="off-canvas-content" data-off-canvas-content>
+        <div class="title-bar">
+          <div class="title-bar-left">
+            <button class="menu-icon" type="button" data-open="offCanvas"></button>
+          </div>
+          <div class="text-center">
+            <span class="title-bar-title center">BarrelPi</span>
+          </div>
+        </div>
+        <div class="space-15"></div>
+
+        <div id="container" class="row ">
+          <div class="ct-chart ct-perfect-fourth"></div>
+        </div>
+        <div class="space-40"></div>
+      </div>
+    </div>
+  </div>
+</template>

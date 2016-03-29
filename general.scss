@@ -1,0 +1,75 @@
+
+
+@import '{zurb:foundation-sites}/scss/foundation';
+
+@include foundation-everything;
+
+body {
+  //huhu
+}
+
+textarea, input, .slider-handle { outline: none; }
+
+
+.container {
+  .label {
+    display: block !important;
+  }
+}
+
+.space-15 {
+  display: block;
+  height: rem-calc(15);
+}
+
+
+.space-20 {
+  display: block;
+  height: rem-calc(20);
+}
+
+.space-40 {
+  display: block;
+  height: rem-calc(40);
+}
+
+.space-60 {
+  display: block;
+  height: rem-calc(60);
+}
+
+.slider-handle {
+  width: rem-calc(50) !important;
+  height: rem-calc(50) !important;
+}
+
+.off-canvas.position-left {
+  min-height: 100%;
+  background-color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  ul {
+    margin-top: rem-calc(50);
+  }
+  .close-button {
+    color: #fff;
+  }
+}
+
+html, body, .off-canvas-wrap, .inner-wrap, .main-section
+{
+  height: 100% !important;
+}
+
+.off-canvas-wrapper, .off-canvas-wrapper-inner {
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+#timespan a.active {
+  background: transparent;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  font-weight: bold;
+  margin-right: 1px;
+}
